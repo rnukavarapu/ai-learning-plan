@@ -1,0 +1,14 @@
+# Per-subproject Python virtualenvs
+**/.venv/
+**/__pycache__/
+*.pyc
+
+# Secrets — never commit real API keys
+**/.env
+
+# Cloned reference repos: large (500MB+), each has its own git history.
+# Not tracked here — see reference-repos/README.md to fetch them.
+reference-repos/*/
+
+# OS
+.DS_Store
