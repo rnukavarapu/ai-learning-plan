@@ -25,4 +25,5 @@ These are the original papers behind concepts referenced throughout the plan. No
 
 - Anthropic's "Building Effective Agents" — [anthropic.com/engineering/building-effective-agents](https://www.anthropic.com/engineering/building-effective-agents)
 - Anthropic Academy courses — interactive, [academy.claude.com](https://academy.claude.com)
+- Jurafsky & Martin, "Speech and Language Processing" (3rd ed. draft) — [web.stanford.edu/~jurafsky/slp3](https://web.stanford.edu/~jurafsky/slp3/) — the classic NLP textbook, kept free by the authors themselves (not downloaded/mirrored here since it's an actively-revised multi-chapter draft — the live page is the authoritative version). See Phase 1 and Phase 3 for which chapters pair with what.
 - Google's Kaggle "5-Day Gen AI Intensive" whitepapers — these exist but sit behind a JS-rendered Kaggle page; couldn't fetch a stable direct-download link. If you want them, go to [kaggle.com/learn-guide/5-day-genai](https://www.kaggle.com/learn-guide/5-day-genai) and download manually (free, no paywall).

@@ -63,6 +63,8 @@ Goal: understand tokens, embeddings, and context well enough to reason about *wh
 
 - StatQuest — ["Word Embedding and Word2Vec, Clearly Explained!!!"](https://www.youtube.com/watch?v=viZrOnJclY0) — the foundational idea (text → vectors, similarity via distance) before Phase 3 applies it to search. Understanding this now makes RAG click much faster later instead of feeling like magic.
 
+Optional deeper reading: Jurafsky & Martin's free "Speech and Language Processing" ([web.stanford.edu/~jurafsky/slp3](https://web.stanford.edu/~jurafsky/slp3/)) has the textbook-depth chapter on vector semantics and embeddings — the standard academic reference if the video leaves you wanting the full treatment.
+
 ### How these models are actually built
 
 **🎥 Watch first:**
@@ -139,6 +141,7 @@ With that overview in place, the courses/docs to actually work through:
 - **DeepLearning.AI — "Retrieval Augmented Generation (RAG)"** (free, ~26h total but modular — pace it across the phase) — architecture through deployment and evaluation of production RAG.
 - **DeepLearning.AI — "Advanced Retrieval for AI with Chroma"** (free, ~1h) — query relevancy, why naive retrieval fails.
 - **Pinecone Learning Center** (free, [pinecone.io/learn](https://www.pinecone.io/learn/)) — explainers on embeddings applied to vector search and chunking strategies specifically.
+- Optional deeper reading: Jurafsky & Martin's free "Speech and Language Processing" ([web.stanford.edu/~jurafsky/slp3](https://web.stanford.edu/~jurafsky/slp3/)) covers information retrieval and question-answering at academic depth — good grounding for *why* retrieval works, underneath the framework-specific tutorials above.
 - **LlamaIndex documentation** (free, [docs.llamaindex.ai](https://docs.llamaindex.ai)) — the most RAG-native framework; work through their basic RAG tutorial.
 - **LLM Zoomcamp by DataTalksClub** (free, self-paced via GitHub, [github.com/DataTalksClub/llm-zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp)) — a full free course covering RAG, vector search, evaluation, and monitoring. Treat this as the spine of this phase if you only pick one thing.
 - **Repo:** [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) — cloned locally at `reference-repos/RAG_Techniques`. The best hands-on complement to LLM Zoomcamp: standalone runnable notebooks for chunking strategies, re-ranking, query rewriting, and RAG evaluation. Pick 4-5 notebooks relevant to your project below rather than working through all of them.
