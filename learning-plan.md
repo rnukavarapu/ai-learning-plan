@@ -8,6 +8,8 @@ The plan below is sequenced so each phase's concepts are prerequisites for the n
 
 **Pace assumption:** ~6 hrs/week, ~20 weeks (~4.5-5 months) for Phases 0-5, plus an open-ended Phase 6 capstone. If a week is heavier or lighter, shift the checkpoint dates rather than skipping content — the sequencing matters more than the calendar.
 
+**⏱️ On splitting content across weeks:** most of the courses in this plan (DeepLearning.AI, Anthropic Academy) are already broken into many short lessons, so pausing mid-course between weeks costs you nothing. A handful of resources are the opposite — single continuous build-along videos or workshops where stopping partway and picking back up a week later means re-establishing context you'll have lost. Those are flagged inline with **⏱️ Do this in one sitting** — treat that week as a longer one (even past 6 hrs) rather than splitting the video itself across two weeks.
+
 **Free vs. paid:** Everything below is free unless explicitly marked **[PAID]**, in which case I've noted price/why it might be worth it and a free alternative.
 
 **Local repos:** Four GitHub repos are cloned locally under `reference-repos/` (one per phase where hands-on code matters most — Phases 1, 2, 3, 4). They're referenced inline in the relevant phase below rather than as a separate list — these are deliberately the *only* repos in this plan; more wasn't more useful.
@@ -53,7 +55,7 @@ Goal: understand tokens, embeddings, and context well enough to reason about *wh
 **🎥 Watch first:**
 
 - Hugging Face — ["The tokenization pipeline"](https://www.youtube.com/watch?v=Yffk5aydLzg) — short conceptual overview of how text becomes the units a model processes.
-- Optional, deeper: Andrej Karpathy — ["Let's build the GPT Tokenizer"](https://www.youtube.com/watch?v=zduSFxRajkE) (~2h) — build one from scratch, byte by byte. This is the real depth version of the concept above if the short video leaves you wanting more.
+- Optional, deeper: Andrej Karpathy — ["Let's build the GPT Tokenizer"](https://www.youtube.com/watch?v=zduSFxRajkE) (~2h) — build one from scratch, byte by byte. This is the real depth version of the concept above if the short video leaves you wanting more. **⏱️ Do this in one sitting** — it's a continuous build-along, not something to pick back up next week.
 
 **Hands-on (5 min):** OpenAI's [Tokenizer tool](https://platform.openai.com/tokenizer) — paste in a sentence and watch it split into tokens in real time. Makes "context window" a concrete, countable thing instead of an abstraction.
 
@@ -79,9 +81,11 @@ Once the videos above have given you the visual/conceptual picture, this course 
 
 Optional deeper dive (skip if time is tight — nothing later depends on these):
 
-- Karpathy's ["Deep Dive into LLMs like ChatGPT"](https://www.youtube.com/watch?v=7xTGNNLPyMI) (~3.5h) — the full technical version of everything above in one sitting.
-- **Andrej Karpathy — "Let's build GPT: from scratch, in code"** (free, YouTube, ~2h) — the single best resource if you want to *really* understand the mechanics rather than just use the API.
-- Andrej Karpathy — ["Let's reproduce GPT-2 (124M)"](https://www.youtube.com/watch?v=l8pRSuU81PU) (~4h) — the furthest-depth option in this whole plan: training an actual GPT-2-scale model from scratch. Only for if "Let's build GPT" wasn't enough and you want the full production-grade version.
+- Karpathy's ["Deep Dive into LLMs like ChatGPT"](https://www.youtube.com/watch?v=7xTGNNLPyMI) (~3.5h) — the full technical version of everything above in one sitting. **⏱️ Do this in one sitting** — that's literally how it's designed to be watched.
+- **Andrej Karpathy — "Let's build GPT: from scratch, in code"** (free, YouTube, ~2h) — the single best resource if you want to *really* understand the mechanics rather than just use the API. **⏱️ Do this in one sitting** — a continuous build-along.
+- Andrej Karpathy — ["Let's reproduce GPT-2 (124M)"](https://www.youtube.com/watch?v=l8pRSuU81PU) (~4h) — the furthest-depth option in this whole plan: training an actual GPT-2-scale model from scratch. Only for if "Let's build GPT" wasn't enough and you want the full production-grade version. **⏱️ Do this in one sitting** — the longest single video in this plan; block out a whole evening or weekend day for it rather than spreading it across two weeks.
+
+If you're doing more than one of the optional deep-dive videos above, budget an extra week for Phase 1 rather than trying to fit them into the standard 4 — each one is meant to be watched start to finish, not chopped up.
 - **Repo (pairs with the video above):** [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) — cloned locally at `reference-repos/LLMs-from-scratch`. Sebastian Raschka's step-by-step PyTorch build of a GPT-style model. Only open this if you did the Karpathy video and want the more polished, book-quality version of the same exercise.
 
 ### Prompting
@@ -180,7 +184,7 @@ Now that you've done the above, these are worth watching too:
 
 **🎥 Watch first:**
 
-- Optional, longer: AI Engineer — ["Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic"](https://www.youtube.com/watch?v=kQmXtrmQ5Zg) — a full hands-on workshop if you want a guided build session rather than docs.
+- Optional, longer: AI Engineer — ["Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic"](https://www.youtube.com/watch?v=kQmXtrmQ5Zg) — a full hands-on workshop if you want a guided build session rather than docs. **⏱️ Do this in one sitting** — it's a single recorded workshop, not a series of short lessons.
 - Andrej Karpathy — ["Software Is Changing (Again)"](https://www.youtube.com/watch?v=LCEmiRjPEtQ) (Y Combinator talk, ~40 min) — his framing of the actual paradigm shift agents represent for how software gets built. More substantive than a "what is an agent" explainer now that you've done the HF Agents Course — this is the "so what" for everything in this phase.
 - Andrew Ng — ["What's next for AI agentic workflows"](https://www.youtube.com/watch?v=sal78ACtGTc) (Sequoia Capital interview, ~25 min) — a complementary take specifically on *why* agentic workflows produce such large capability jumps and what patterns actually work, from the person behind the "Agentic AI" course above.
 
