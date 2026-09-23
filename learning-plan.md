@@ -31,7 +31,7 @@ Goal: build an accurate, durable mental model of what these systems actually are
 - IBM Technology — ["Why Large Language Models Hallucinate"](https://www.youtube.com/watch?v=cfqtFvWOfg0) (~9 min) — directly answers "why does it just make things up sometimes," which is the single most common confusion at this stage.
 - IBM Technology — ["What are AI Agents?"](https://www.youtube.com/watch?v=F8NKVhkZZWI) (~9 min) — a preview of where this is all heading (Phase 4); IBM's channel is consistently good for crisp, jargon-light 10-minute explainers — worth searching it directly whenever a term below is unfamiliar (e.g. "vector database," "fine-tuning").
 
-**Big picture (optional):** skim a16z's "AI Canon" reading list (free) and Anthropic's Economic Index reports (free) if you want the wider context of how this technology is playing out beyond your own learning. Not required to move on.
+**Big picture (optional):** skim a16z's "AI Canon" reading list (free) and Anthropic's Economic Index reports (free) if you want the wider context of how this technology is playing out beyond your own learning. Andrew Ng's ["Opportunities in AI - 2023"](https://www.youtube.com/watch?v=5p248yoa3oE) (Stanford Online, ~40 min) covers similar ground on video — state of the field, where the capability is actually going. Not required to move on.
 
 **🧪 Test yourself:**
 
@@ -161,6 +161,7 @@ Goal: move from single LLM calls to systems that plan, use tools, and orchestrat
 - IBM Technology — ["What is LangChain?"](https://www.youtube.com/watch?v=1bUy-1hGZpI) (~8 min) — quick framework orientation before the LangGraph docs/tutorials.
 - Optional, longer: AI Engineer — ["Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic"](https://www.youtube.com/watch?v=kQmXtrmQ5Zg) — a full hands-on workshop if you want a guided build session rather than docs.
 - Andrej Karpathy — ["Software Is Changing (Again)"](https://www.youtube.com/watch?v=LCEmiRjPEtQ) (Y Combinator talk, ~40 min) — his framing of the actual paradigm shift agents represent for how software gets built. More substantive than a "what is an agent" explainer now that you've done the HF Agents Course — this is the "so what" for everything in this phase.
+- Andrew Ng — ["What's next for AI agentic workflows"](https://www.youtube.com/watch?v=sal78ACtGTc) (Sequoia Capital interview, ~25 min) — a complementary take specifically on *why* agentic workflows produce such large capability jumps and what patterns actually work, from the person behind the DeepLearning.AI "Agentic AI" course above.
 
 **Big picture:** re-read Anthropic's "Building Effective Agents" now that you have hands-on context — it'll read completely differently than it did in Phase 0.
 
