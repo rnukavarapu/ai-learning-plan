@@ -50,7 +50,8 @@ Goal: understand tokens, embeddings, and context well enough to reason about *wh
 
 **🎥 Watch first:**
 
-- Hugging Face — ["The tokenization pipeline"](https://www.youtube.com/watch?v=Yffk5aydLzg) — how text actually becomes the units a model processes.
+- Hugging Face — ["The tokenization pipeline"](https://www.youtube.com/watch?v=Yffk5aydLzg) — short conceptual overview of how text becomes the units a model processes.
+- Optional, deeper: Andrej Karpathy — ["Let's build the GPT Tokenizer"](https://www.youtube.com/watch?v=zduSFxRajkE) (~2h) — build one from scratch, byte by byte. This is the real depth version of the concept above if the short video leaves you wanting more.
 
 **Hands-on (5 min):** OpenAI's [Tokenizer tool](https://platform.openai.com/tokenizer) — paste in a sentence and watch it split into tokens in real time. Makes "context window" a concrete, countable thing instead of an abstraction.
 
@@ -75,6 +76,7 @@ Optional deeper dive (skip if time is tight — nothing later depends on these):
 
 - Karpathy's ["Deep Dive into LLMs like ChatGPT"](https://www.youtube.com/watch?v=7xTGNNLPyMI) (~3.5h) — the full technical version of everything above in one sitting.
 - **Andrej Karpathy — "Let's build GPT: from scratch, in code"** (free, YouTube, ~2h) — the single best resource if you want to *really* understand the mechanics rather than just use the API.
+- Andrej Karpathy — ["Let's reproduce GPT-2 (124M)"](https://www.youtube.com/watch?v=l8pRSuU81PU) (~4h) — the furthest-depth option in this whole plan: training an actual GPT-2-scale model from scratch. Only for if "Let's build GPT" wasn't enough and you want the full production-grade version.
 - **Repo (pairs with the video above):** [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) — cloned locally at `reference-repos/LLMs-from-scratch`. Sebastian Raschka's step-by-step PyTorch build of a GPT-style model. Only open this if you did the Karpathy video and want the more polished, book-quality version of the same exercise.
 
 ### Prompting
@@ -158,6 +160,7 @@ Goal: move from single LLM calls to systems that plan, use tools, and orchestrat
 - IBM Technology — ["What is MCP? Integrate AI Agents with Databases & APIs"](https://www.youtube.com/watch?v=eur8dUO9mvE) (~9 min) and Shaw Talebi — ["Model Context Protocol (MCP) Explained in 20 Minutes"](https://www.youtube.com/watch?v=N3vHJcHBS-w) — two short, complementary MCP explainers before the DeepLearning.AI MCP course above.
 - IBM Technology — ["What is LangChain?"](https://www.youtube.com/watch?v=1bUy-1hGZpI) (~8 min) — quick framework orientation before the LangGraph docs/tutorials.
 - Optional, longer: AI Engineer — ["Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic"](https://www.youtube.com/watch?v=kQmXtrmQ5Zg) — a full hands-on workshop if you want a guided build session rather than docs.
+- Andrej Karpathy — ["Software Is Changing (Again)"](https://www.youtube.com/watch?v=LCEmiRjPEtQ) (Y Combinator talk, ~40 min) — his framing of the actual paradigm shift agents represent for how software gets built. More substantive than a "what is an agent" explainer now that you've done the HF Agents Course — this is the "so what" for everything in this phase.
 
 **Big picture:** re-read Anthropic's "Building Effective Agents" now that you have hands-on context — it'll read completely differently than it did in Phase 0.
 
