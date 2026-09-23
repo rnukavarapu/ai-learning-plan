@@ -18,10 +18,6 @@ The plan below is sequenced so each phase's concepts are prerequisites for the n
 
 Goal: build an accurate, durable mental model of what these systems actually are — and aren't — before touching any code.
 
-- **Anthropic Academy — "AI capabilities and limitations"** (free, ~3.5h) — [academy.claude.com](https://academy.claude.com/courses) — covers next-token prediction, knowledge, working memory, steerability, context limits. Best single resource for a solid mental model.
-- **Anthropic Academy — "AI Fluency: Framework and foundations"** (free, ~4h) — the 4D framework (Delegation, Description, Discernment, Diligence) for working with AI systems thoughtfully rather than trusting output blindly.
-- **Anthropic — "Building Effective Agents"** (free blog post, ~30 min) — [anthropic.com/engineering/building-effective-agents](https://www.anthropic.com/engineering/building-effective-agents) — the canonical framing of agents vs. workflows. You won't build one for a few phases yet, but the vocabulary is worth having early.
-
 **🎥 Watch first (all free, YouTube):**
 
 - IBM Technology — ["What are Generative AI models?"](https://www.youtube.com/watch?v=hfIUstzHs9A) (~9 min) — the broadest possible starting point.
@@ -30,6 +26,12 @@ Goal: build an accurate, durable mental model of what these systems actually are
 - 3Blue1Brown — ["Large Language Models explained briefly"](https://www.youtube.com/watch?v=LPZh9BOjkQs) (8 min) — fast recap that ties the previous three together.
 - IBM Technology — ["Why Large Language Models Hallucinate"](https://www.youtube.com/watch?v=cfqtFvWOfg0) (~9 min) — directly answers "why does it just make things up sometimes," which is the single most common confusion at this stage.
 - IBM Technology — ["What are AI Agents?"](https://www.youtube.com/watch?v=F8NKVhkZZWI) (~9 min) — a preview of where this is all heading (Phase 4); IBM's channel is consistently good for crisp, jargon-light 10-minute explainers — worth searching it directly whenever a term below is unfamiliar (e.g. "vector database," "fine-tuning").
+
+Now that the videos above have given you the vocabulary, go deeper with:
+
+- **Anthropic Academy — "AI capabilities and limitations"** (free, ~3.5h) — [academy.claude.com](https://academy.claude.com/courses) — covers next-token prediction, knowledge, working memory, steerability, context limits. Best single resource for a solid mental model.
+- **Anthropic Academy — "AI Fluency: Framework and foundations"** (free, ~4h) — the 4D framework (Delegation, Description, Discernment, Diligence) for working with AI systems thoughtfully rather than trusting output blindly.
+- **Anthropic — "Building Effective Agents"** (free blog post, ~30 min) — [anthropic.com/engineering/building-effective-agents](https://www.anthropic.com/engineering/building-effective-agents) — the canonical framing of agents vs. workflows. You won't build one for a few phases yet, but the vocabulary is worth having early.
 
 **Big picture (optional):** skim a16z's "AI Canon" reading list (free) and Anthropic's Economic Index reports (free) if you want the wider context of how this technology is playing out beyond your own learning. Andrew Ng's ["Opportunities in AI - 2023"](https://www.youtube.com/watch?v=5p248yoa3oE) (Stanford Online, ~40 min) covers similar ground on video — state of the field, where the capability is actually going. Not required to move on.
 
@@ -63,14 +65,15 @@ Goal: understand tokens, embeddings, and context well enough to reason about *wh
 
 ### How these models are actually built
 
-- **DeepLearning.AI — "Attention in Transformers: Concepts and Code in PyTorch"** (free, StatQuest, ~1h15m) — if you want one level deeper into the actual mechanism.
-
 **🎥 Watch first:**
 
-- 3Blue1Brown — ["Transformers, the tech behind LLMs"](https://www.youtube.com/watch?v=wjZofJX0v4M) (~27 min) and ["Attention in transformers, step-by-step"](https://www.youtube.com/watch?v=eMlx5fFNoYc) (~26 min) — the visual deep-dive companion to the StatQuest course above.
+- 3Blue1Brown — ["Transformers, the tech behind LLMs"](https://www.youtube.com/watch?v=wjZofJX0v4M) (~27 min) and ["Attention in transformers, step-by-step"](https://www.youtube.com/watch?v=eMlx5fFNoYc) (~26 min) — the visual deep-dive on the actual mechanism.
 - Optional alternate style: StatQuest — ["Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!"](https://www.youtube.com/watch?v=zxQyTK8quyY) — if 3Blue1Brown's animation-heavy explanation isn't clicking, this covers the same ground differently.
 - Andrej Karpathy — ["[1hr Talk] Intro to Large Language Models"](https://www.youtube.com/watch?v=zjkBMFhNj_g) — the best single mid-length overview once you've done the videos above; covers training, capabilities, and limitations in plain language.
-- Andrej Karpathy — ["How I use LLMs"](https://www.youtube.com/watch?v=EWvNQjAaOHw) — practical, not theoretical: how a leading practitioner actually uses these tools day to day.
+
+Once the videos above have given you the visual/conceptual picture, this course walks the same mechanism in code:
+
+- **DeepLearning.AI — "Attention in Transformers: Concepts and Code in PyTorch"** (free, StatQuest, ~1h15m) — implements the attention mechanism you just watched explained.
 
 Optional deeper dive (skip if time is tight — nothing later depends on these):
 
@@ -80,6 +83,12 @@ Optional deeper dive (skip if time is tight — nothing later depends on these):
 - **Repo (pairs with the video above):** [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) — cloned locally at `reference-repos/LLMs-from-scratch`. Sebastian Raschka's step-by-step PyTorch build of a GPT-style model. Only open this if you did the Karpathy video and want the more polished, book-quality version of the same exercise.
 
 ### Prompting
+
+**🎥 Watch first:**
+
+- Andrej Karpathy — ["How I use LLMs"](https://www.youtube.com/watch?v=EWvNQjAaOHw) — practical, not theoretical: how a leading practitioner actually prompts and uses these tools day to day. The right lead-in now that you understand the mechanism and are about to learn technique.
+
+Then the actual techniques:
 
 - **DeepLearning.AI — "AI Prompting for Everyone"** (free, Andrew Ng, ~7h) — solid, non-code-heavy prompting foundations.
 - **Prompt Engineering Guide** (free, [promptingguide.ai](https://www.promptingguide.ai/)) — reference the Techniques and Agents sections as you go (zero-shot, few-shot, chain-of-thought, ReAct); use as an ongoing reference, not a linear read.
@@ -120,17 +129,19 @@ Goal: comfortable writing small Python programs that call LLMs, handle structure
 
 Goal: RAG is fundamentally a data pipeline problem (ingestion, chunking, indexing, retrieval) wrapped around an LLM — and now you already have the embeddings concept from Phase 1 to make sense of the "retrieval" half.
 
+**🎥 Watch first (all free, YouTube):**
+
+- IBM Technology — ["What is Retrieval-Augmented Generation (RAG)?"](https://www.youtube.com/watch?v=T-D1OfcDW1M) (~7 min) — the fast conceptual overview before you touch code.
+- freeCodeCamp — ["Learn RAG From Scratch – Python AI Tutorial from a LangChain Engineer"](https://www.youtube.com/watch?v=sVcwVQRHIc8) (full-length, several hours) — a complete build-along tutorial; treat it as a spine you dip into alongside the RAG_Techniques notebooks rather than watching start to finish in one sitting.
+
+With that overview in place, the courses/docs to actually work through:
+
 - **DeepLearning.AI — "Retrieval Augmented Generation (RAG)"** (free, ~26h total but modular — pace it across the phase) — architecture through deployment and evaluation of production RAG.
 - **DeepLearning.AI — "Advanced Retrieval for AI with Chroma"** (free, ~1h) — query relevancy, why naive retrieval fails.
 - **Pinecone Learning Center** (free, [pinecone.io/learn](https://www.pinecone.io/learn/)) — explainers on embeddings applied to vector search and chunking strategies specifically.
 - **LlamaIndex documentation** (free, [docs.llamaindex.ai](https://docs.llamaindex.ai)) — the most RAG-native framework; work through their basic RAG tutorial.
 - **LLM Zoomcamp by DataTalksClub** (free, self-paced via GitHub, [github.com/DataTalksClub/llm-zoomcamp](https://github.com/DataTalksClub/llm-zoomcamp)) — a full free course covering RAG, vector search, evaluation, and monitoring. Treat this as the spine of this phase if you only pick one thing.
 - **Repo:** [NirDiamant/RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques) — cloned locally at `reference-repos/RAG_Techniques`. The best hands-on complement to LLM Zoomcamp: standalone runnable notebooks for chunking strategies, re-ranking, query rewriting, and RAG evaluation. Pick 4-5 notebooks relevant to your project below rather than working through all of them.
-
-**🎥 Watch first (all free, YouTube):**
-
-- IBM Technology — ["What is Retrieval-Augmented Generation (RAG)?"](https://www.youtube.com/watch?v=T-D1OfcDW1M) (~7 min) — the fast conceptual overview before you touch code.
-- freeCodeCamp — ["Learn RAG From Scratch – Python AI Tutorial from a LangChain Engineer"](https://www.youtube.com/watch?v=sVcwVQRHIc8) (full-length, several hours) — a complete build-along tutorial; treat it as a spine you dip into alongside the RAG_Techniques notebooks rather than watching start to finish in one sitting.
 
 **Hands-on project:** Build a RAG assistant over something you actually have — personal notes, a hobby project's docs, articles you've saved, or any body of text you care about being able to query. This becomes a concrete artifact you built and understand end-to-end.
 
@@ -147,6 +158,13 @@ Goal: RAG is fundamentally a data pipeline problem (ingestion, chunking, indexin
 
 Goal: move from single LLM calls to systems that plan, use tools, and orchestrate multi-step work — the "agentic" core of this whole plan.
 
+**🎥 Watch first (all free, YouTube):**
+
+- IBM Technology — ["What is MCP? Integrate AI Agents with Databases & APIs"](https://www.youtube.com/watch?v=eur8dUO9mvE) (~9 min) and Shaw Talebi — ["Model Context Protocol (MCP) Explained in 20 Minutes"](https://www.youtube.com/watch?v=N3vHJcHBS-w) — two short, complementary MCP explainers before the courses below.
+- IBM Technology — ["What is LangChain?"](https://www.youtube.com/watch?v=1bUy-1hGZpI) (~8 min) — quick framework orientation before the LangGraph docs/tutorials.
+
+With that vocabulary in place, the courses/docs to actually work through:
+
 - **Hugging Face — "Agents Course"** (free, [huggingface.co/learn/agents-course](https://huggingface.co/learn/agents-course)) — the most complete free, structured course on agent architectures, tool use, and evaluation.
 - **Model Context Protocol (MCP) docs + quickstart** (free, [modelcontextprotocol.io](https://modelcontextprotocol.io)) — increasingly the standard for tool/data access across agent frameworks; worth understanding regardless of which framework you settle on.
 - **DeepLearning.AI — "MCP: Build Rich-Context AI Apps with Anthropic"** (free, ~2h) — hands-on MCP building.
@@ -155,13 +173,13 @@ Goal: move from single LLM calls to systems that plan, use tools, and orchestrat
 - **CrewAI documentation** (free, [docs.crewai.com](https://docs.crewai.com)) — lighter-weight alternative framework for multi-agent orchestration; skim for contrast rather than going deep in both frameworks.
 - **Repo:** [NirDiamant/GenAI_Agents](https://github.com/NirDiamant/GenAI_Agents) — cloned locally at `reference-repos/GenAI_Agents`. Same style/quality as the RAG_Techniques repo above, progressing from basic conversational bots to multi-agent systems — the natural next step after Phase 3's RAG notebooks.
 
-**🎥 Watch first (all free, YouTube):**
+Now that you've done the above, these are worth watching too:
 
-- IBM Technology — ["What is MCP? Integrate AI Agents with Databases & APIs"](https://www.youtube.com/watch?v=eur8dUO9mvE) (~9 min) and Shaw Talebi — ["Model Context Protocol (MCP) Explained in 20 Minutes"](https://www.youtube.com/watch?v=N3vHJcHBS-w) — two short, complementary MCP explainers before the DeepLearning.AI MCP course above.
-- IBM Technology — ["What is LangChain?"](https://www.youtube.com/watch?v=1bUy-1hGZpI) (~8 min) — quick framework orientation before the LangGraph docs/tutorials.
+**🎥 Watch first:**
+
 - Optional, longer: AI Engineer — ["Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic"](https://www.youtube.com/watch?v=kQmXtrmQ5Zg) — a full hands-on workshop if you want a guided build session rather than docs.
 - Andrej Karpathy — ["Software Is Changing (Again)"](https://www.youtube.com/watch?v=LCEmiRjPEtQ) (Y Combinator talk, ~40 min) — his framing of the actual paradigm shift agents represent for how software gets built. More substantive than a "what is an agent" explainer now that you've done the HF Agents Course — this is the "so what" for everything in this phase.
-- Andrew Ng — ["What's next for AI agentic workflows"](https://www.youtube.com/watch?v=sal78ACtGTc) (Sequoia Capital interview, ~25 min) — a complementary take specifically on *why* agentic workflows produce such large capability jumps and what patterns actually work, from the person behind the DeepLearning.AI "Agentic AI" course above.
+- Andrew Ng — ["What's next for AI agentic workflows"](https://www.youtube.com/watch?v=sal78ACtGTc) (Sequoia Capital interview, ~25 min) — a complementary take specifically on *why* agentic workflows produce such large capability jumps and what patterns actually work, from the person behind the "Agentic AI" course above.
 
 **Big picture:** re-read Anthropic's "Building Effective Agents" now that you have hands-on context — it'll read completely differently than it did in Phase 0.
 
@@ -180,16 +198,18 @@ Goal: move from single LLM calls to systems that plan, use tools, and orchestrat
 
 Goal: the production concerns — evaluation, monitoring, cost, latency, guardrails — that separate a demo from something reliable.
 
+**🎥 Watch first (free, YouTube):**
+
+- DeepLearning.AI — ["A Chat with Andrew on MLOps: From Model-centric to Data-centric AI"](https://www.youtube.com/watch?v=06-AZXmwHjo) — Andrew Ng specifically on the production/ops mindset shift; frames the rest of this phase before you dive into the specific tools below.
+
+With that framing, the specific courses/reading:
+
 - **LLM Zoomcamp (DataTalksClub)** — revisit the evaluation/monitoring modules you may have skipped in Phase 3.
 - **DeepLearning.AI — "Safe and reliable AI via guardrails"** (free, GuardrailsAI, ~1h40m).
 - **DeepLearning.AI — "Fast & Efficient LLM Inference with vLLM"** (free, ~1h40m) and **"Fast LLM Inference with Cerebras"** — cost/latency tradeoffs, useful vocabulary either way.
 - **DeepLearning.AI — "Orchestrating Workflows for GenAI Applications"** (free, Astronomer, ~1h50m) — Airflow-based orchestration for GenAI pipelines.
 - **Made With ML by Goku Mohandas** (free, [madewithml.com](https://madewithml.com)) — MLOps fundamentals (testing, versioning, CI/CD for ML) if you want the classical-MLOps grounding underneath LLMOps.
 - **Chip Huyen's blog** (free, [huyenchip.com/blog](https://huyenchip.com/blog)) — the best free ongoing writing on production LLM systems and evaluation design.
-
-**🎥 Watch first (free, YouTube):**
-
-- DeepLearning.AI — ["A Chat with Andrew on MLOps: From Model-centric to Data-centric AI"](https://www.youtube.com/watch?v=06-AZXmwHjo) — Andrew Ng specifically on the production/ops mindset shift.
 
 **[PAID, optional]** Chip Huyen's book **"AI Engineering"** (O'Reilly, ~$50-65) — if you want the book-length, structured version of the above blog content. Her earlier **"Designing Machine Learning Systems"** (~$50-65) is the classical-MLOps equivalent. Worth buying if you prefer books to scattered free content; not required.
 

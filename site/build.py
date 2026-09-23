@@ -156,31 +156,55 @@ LECTURE_CALLOUT_RE = re.compile(
     r'<div class="callout (' + "|".join(LECTURE_SPLIT_CLASSES) + r')">.*?</div>',
     re.DOTALL,
 )
+BARE_LIST_RE = re.compile(r"<ul>.*?</ul>", re.DOTALL)
 H3_TEXT_RE = re.compile(r"<h3>(.*?)</h3>")
 
 
 def split_into_lectures(phase_html: str):
-    """Returns an ordered list of (title, html_fragment) lecture slices."""
-    matches = list(LECTURE_CALLOUT_RE.finditer(phase_html))
-    if not matches:
+    """Returns an ordered list of (title, html_fragment) lecture slices.
+
+    Boundaries are the 4 checkable callout types *and* any bare resource
+    list (a <ul> not already inside one of those callouts) — otherwise a
+    reading list sitting between two callouts silently gets swept into
+    whichever callout comes next, mislabeling that lecture (e.g. a course
+    list ending up filed under "Test yourself" just because it happened to
+    precede the quiz).
+    """
+    callout_matches = list(LECTURE_CALLOUT_RE.finditer(phase_html))
+    callout_spans = [(m.start(), m.end()) for m in callout_matches]
+
+    def inside_a_callout(start, end):
+        return any(start >= c_start and end <= c_end for c_start, c_end in callout_spans)
+
+    boundaries = [(m.start(), m.end(), m.group(1)) for m in callout_matches]
+    boundaries += [
+        (m.start(), m.end(), None)
+        for m in BARE_LIST_RE.finditer(phase_html)
+        if not inside_a_callout(m.start(), m.end())
+    ]
+    boundaries.sort(key=lambda b: b[0])
+
+    if not boundaries:
         return [("Overview & Resources", phase_html)]
 
     lectures = []
-    overview_html = phase_html[: matches[0].start()]
+    overview_html = phase_html[: boundaries[0][0]]
     if overview_html.strip():
         lectures.append(("📖 Overview & Resources", overview_html))
 
-    prev_end = matches[0].start()
-    for m in matches:
-        seg_html = phase_html[prev_end : m.end()]
-        css_class = m.group(1)
+    prev_end = boundaries[0][0]
+    for start, end, css_class in boundaries:
+        seg_html = phase_html[prev_end:end]
         h3_texts = H3_TEXT_RE.findall(seg_html)
         if h3_texts:
-            title = f"{LECTURE_ICONS[css_class]} {re.sub('<[^>]+>', '', h3_texts[-1])}"
-        else:
+            icon = LECTURE_ICONS.get(css_class, "📖")
+            title = f"{icon} {re.sub('<[^>]+>', '', h3_texts[-1])}"
+        elif css_class:
             title = LECTURE_FALLBACK_TITLES[css_class]
+        else:
+            title = "📖 Resources"
         lectures.append((title, seg_html))
-        prev_end = m.end()
+        prev_end = end
 
     # De-duplicate repeated titles within the same phase ("🛠️ Hands-on" twice, etc.)
     seen = {}
